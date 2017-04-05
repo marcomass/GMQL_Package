@@ -7,7 +7,7 @@ GMQL QuickStart
 ================
 GMQL is a **GenoMetric Query Language**, that runs over GDMS, **Genomic Data Management System**. This manual will help you to install GDMS to get started scripting GMQL. 
 
-More information about [GDMS architecture](https://github.com/DEIB-GECO/GMQL/blob/master/docs/gmql_architecture.md) and and GDMS packages go to [GMQL](https://github.com/DEIB-GECO/GMQL/).
+More information about [GDMS architecture](https://github.com/DEIB-GECO/GMQL/blob/master/docs/gmql_architecture.md) and GDMS packages is available at [GMQL](https://github.com/DEIB-GECO/GMQL/).
 
 ### GDMS Installation
 
@@ -23,7 +23,7 @@ More information about [GDMS architecture](https://github.com/DEIB-GECO/GMQL/blo
 			sudo apt-get install maven
 			
 	- Or go to [maven installation web page](https://maven.apache.org/install.html)
-- Git installed: 
+- Git installation: 
 	- You can use this command in terminal (Ubuntu/Debian):
 	- Or see [Git installation website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 	
@@ -53,7 +53,7 @@ Quick Start Examples
 You will find in the package **bin/ folder** the following shell executables: 
 
 - [repositoryManager](https://github.com/DEIB-GECO/GMQL_Package/blob/master/bin/repositoryManager)
-	Run GMQL repository to find the user data sets installed. Inistially the user has no datasets in his repository and the user is not even registered. The first command to run is: 
+	Run GMQL repository to register the user and install user data sets. Initially the user has no datasets in his repository and the user is not even registered. The first command to run is: 
 	
 		repositoryManager RegisterUser
 	
@@ -61,7 +61,7 @@ You will find in the package **bin/ folder** the following shell executables:
 	
 	For information about the repository manager see [repository shell APIs](https://github.com/DEIB-GECO/GMQL/blob/master/docs/SHELL_API.md).
 - [GMQL-Submit](https://github.com/DEIB-GECO/GMQL_Package/blob/master/bin/GMQL-Submit)
-	This executable is used to submit GMQL script to GDMS engine **without** the use of GDMS repository. For example code see [GMQL examples](https://github.com/DEIB-GECO/GMQL/blob/master/docs/example.md). The selection in this case is from a dataset directories and the materialization is to output directories. This is useful for trying GDMS without installing repository but not suggested for long use of GDMS, where a huge number of datasets are generated and the user starts to loose track of the generated datasets. 
+	This executable is used to submit GMQL script to GDMS engine **without** the use of GDMS repository. For example code see [GMQL examples](https://github.com/DEIB-GECO/GMQL/blob/master/docs/example.md). The GMQL selection in this case will be from dataset directories and the GMQL materialization will be to output directories. This is useful for trying GDMS without installing the repository, but it is not suggested for long use of GDMS, where a huge number of datasets are generated and the user starts to loose track of the generated datasets. 
 	
 	Submit Example: 
 
@@ -73,22 +73,22 @@ You will find in the package **bin/ folder** the following shell executables:
 
 	
 - [GMQL-Submit-R](https://github.com/DEIB-GECO/GMQL_Package/blob/master/bin/GMQL-Submit-R)
-	This executable is used to submit GMQL script to GDMS engine **with** the use of GDMS repository. For example code see [GMQL examples](https://github.com/DEIB-GECO/GMQL/blob/master/docs/example.md). The selection in this case is using dataset names from the repository and the materialization is to datasets in repository. This is simpler to track generated datasets and manage the data in the system.
-	The following example read datasets from the repository and write the result in the repository: 
+	This executable is used to submit GMQL script to GDMS engine **with** the use of GDMS repository. For example code see [GMQL examples](https://github.com/DEIB-GECO/GMQL/blob/master/docs/example.md). The GMQL selection in this case will be using dataset names from the repository and the GMQL materialization will be to datasets in the repository. This is simpler to track generated datasets and manage the data in the system.
+	The following example reads datasets from the repository and writes the result in the repository: 
 	
 			bin/GMQL-Submit-R -scriptpath /home/user/GMQL/examples/GMQL_Submit_Repository_Example.gmql
 
-	The datasets mentioned in the code (ann, and exp) should be added to the repository first using repositoryManager command. You can find a sample data in examples/data/ann and examples/data/exp	folders.
+	The datasets mentioned in the code (ann, and exp) should be added to the repository first using repositoryManager command. You can find a sample data in examples/data/ann and examples/data/exp folders.
 
 
 One click Start
 ============
-We provided a shell code that adds four datasets to GDMS repository and another shell script to run four scripts on those daatasets. 
+We provided a shell code that adds four datasets to GDMS repository and another shell script to run four GMQL scripts on those daatasets. 
 
 This code will add four datasets to the repository, run the code form GDMS installation folder:
 		
 	examples/createInputDataSets.sh
 
-This code will run four scripts of GMQL, the result will be found in the repository,  run the code form GDMS installation folder:
+This code will run four GMQL scripts, the result will be found in the repository, run the code form GDMS installation folder:
 
 	examples/runScriptExamples.sh
